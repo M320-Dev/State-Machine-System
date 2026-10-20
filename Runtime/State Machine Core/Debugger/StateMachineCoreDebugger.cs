@@ -1,4 +1,6 @@
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace M320.StateMachineSystem
@@ -7,12 +9,18 @@ namespace M320.StateMachineSystem
     {
         private void OnDrawGizmos()
         {
+#if UNITY_EDITOR
+
             if (!enabled) return;
 
             string currentStateBranchString = CurrentStateBranchString();
             GUIStyle style = Style();
             Handles.Label(transform.position, currentStateBranchString, style);
+
+#endif
         }
+
+#if UNITY_EDITOR
 
         private GUIStyle Style() 
         {
@@ -21,5 +29,7 @@ namespace M320.StateMachineSystem
             style.alignment = TextAnchor.MiddleCenter;
             return style;
         }
+
+#endif
     }
 }
