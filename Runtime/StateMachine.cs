@@ -63,7 +63,7 @@ namespace M320.StateMachineSystem
         private bool CurrentStateIsFinished() 
         {
             return CurrentState == null 
-                || CurrentState is not IFinishable finishable 
+                || CurrentState is not IReadOnlyFinishable finishable 
                 || finishable.IsFinished;
         }
 

@@ -2,9 +2,8 @@ namespace M320.StateMachineSystem
 {
     public class FinishableState : State, IFinishable
     {
-        private bool _isFinished;
-        public bool IsFinished => _isFinished;
-        void IFinishable.SetIsFinished(bool isFinished) => _isFinished = isFinished;
+        virtual public bool IsFinished { get; protected set; }
+        void IFinishable.SetIsFinished(bool isFinished) => IsFinished = isFinished;
 
         #region Constructors
 

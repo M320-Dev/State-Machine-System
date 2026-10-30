@@ -2,6 +2,8 @@ namespace M320.StateMachineSystem
 {
     public class TimedState : FinishableState, ITimed
     {
+        override public bool IsFinished => base.IsFinished;
+
         public float Duration { get; set; }
         public UpdateMode Mode { get; set; }
 
